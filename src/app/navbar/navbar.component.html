@@ -1,0 +1,46 @@
+<header>
+  <nav class="navbar navbar-dark fixed-top">
+    <div class="container-fluid">
+      <div><a class="navbar-brand" href="#inicio">
+          <img src="../../assets/Img/LogoAP.png" width="70">
+      </a>
+      </div>
+      <!-- Button trigger modal -->
+      <ul style="list-style:none;">
+        <li><i class="fa-solid fa-user-lock fa-xl position-absolute top-50 start-100 translate-middle login" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="toggleShowBtn()"></i></li>
+        <li><button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
+        </button></li>
+      </ul>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menú</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="sobremi">Sobre Mí</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="habilidades">Habilidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#proyectos">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="list-group list-group-horizontal listaderedes">
+          <li class="nav-item list-group-item"><a href="https://www.linkedin.com/in/victor-uzcategui-90040714a/" target="_blank"><i class="fa-brands fa-linkedin-in fa-xl redes"></i></a></li>
+          <li class="nav-item list-group-item"><a href="https://github.com/victorluq" target="_blank"><i class="fa-brands fa-github fa-xl redes"></i></a></li>
+      </ul>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <app-login></app-login>
+    

@@ -1,0 +1,32 @@
+/*Section Footer*/
+
+
+section.footer{
+    padding-top: 1rem;
+    color: #fcfdfd;
+    background-color: #020202d5;
+}
+
+.iconfooter{
+    padding-top: 1.5rem;
+    color: #F63C12;
+}
+
+.redesfooter{
+    padding-top: 0.5rem;
+    padding-left: 8rem;
+}
+
+.list-group{
+    --bs-list-group-bg: transperent;
+    --bs-list-group-border-color: transperent;
+}
+
+.redes{
+    color: #ffffff; 
+    
+}
+.redes:hover{
+    color: #F63C12;
+    transform: scale(1.5); 
+}

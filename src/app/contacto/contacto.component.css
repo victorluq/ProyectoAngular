@@ -1,0 +1,13 @@
+section.contacto{
+    background-image: url(../../assets/Img/desarrolloweboscuro.webp);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.form-control{
+    border-color: #ffffff;
+    background-color: #ffffff31;
+    color: #070707;
+ }

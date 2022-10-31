@@ -1,0 +1,100 @@
+<section id="habilidades" class="habilidades">
+    <div class="container">
+      
+      <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+          <h5>Habilidades</h5>
+              <!-- Button trigger modal -->
+              <i class="fa-solid fa-pen-to-square fa-xs modificar" type="button" data-bs-toggle="modal" data-bs-target="#introhabilidades"></i>
+          <br>
+        </div>
+      </div>
+      <hr class="divider">
+      <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+              <h6><p class="text-pequeño">{{descripcion_habilidades}}
+              </p></h6><br>
+          </div>
+      </div>
+
+        <div class="row">
+
+        <!--Columna habilidades Front-End-->
+          <div class="col col-12 col-sm-12 col-md-4 col-lg-4">
+            <h5>Front-End Skills
+                  <!-- Button trigger modal -->
+                  <i class="fa-solid fa-circle-plus fa-xs modificar1" type="button" data-bs-toggle="modal" data-bs-target="#habilidAgregar"></i>
+            </h5><br>
+            <hr class="divider2">
+
+            <!--Iteración sobre la variable de instancia y presentación de datos mediante iteración-->
+            <div *ngFor="let habilidadfront of habilidadesFront">
+              <h6 class="text-skills"><i [ngClass]="habilidadfront.icono"></i>&nbsp;&nbsp;&nbsp;{{habilidadfront.habilidad}}
+                              <!-- Button trigger modal -->
+                              <ul class="list-group list-group-horizontal modificar madificarItems">
+                                <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" data-bs-toggle="modal" data-bs-target="#habilidEditar"></i></li>
+                                <li class="nav-item list-group-item"><i class="fa-solid fa-trash-can fa-xs"></i></li>
+                              </ul>
+              </h6><br>
+              <div class="progress progress1 mb-4">
+                <div class="progress-bar" role="progressbar" aria-label="Example with label" [ngStyle]="{width:habilidadfront.porcentajeProgreso}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{habilidadfront.nivel}}</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!--Columna habilidades Back-End-->
+
+          <div class="col col-12 col-sm-12 col-md-4 col-lg-4">
+            <h5>Back-End Skills
+                  <!-- Button trigger modal -->
+                  <i class="fa-solid fa-circle-plus fa-xs modificar1" type="button" data-bs-toggle="modal" data-bs-target="#habilidAgregar"></i>
+            </h5><br>
+            <hr class="divider2">
+
+            <!--Iteración sobre la variable de instancia y presentación de datos mediante iteración-->
+            <div *ngFor="let habilidadback of habilidadesBack">
+            <h6 class="text-skills"><i [ngClass]="habilidadback.icono"></i>&nbsp;&nbsp;&nbsp;{{habilidadback.habilidad}}
+                  <!-- Button trigger modal -->
+                  <ul class="list-group list-group-horizontal modificar madificarItems">
+                    <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" data-bs-toggle="modal" data-bs-target="#habilidEditar"></i></li>
+                    <li class="nav-item list-group-item"><i class="fa-solid fa-trash-can fa-xs"></i></li>
+                  </ul>
+            </h6><br>
+              <div class="progress progress2 mb-4">
+                <div class="progress-bar" role="progressbar" aria-label="Example with label" [ngStyle]="{width:habilidadback.porcentajeProgreso}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{habilidadback.nivel}}</div>
+              </div>
+            </div>
+          </div>
+
+          <!--Columna habilidades Soft-->
+
+          <div class="col col-12 col-sm-12 col-md-4 col-lg-4">
+            <h5>Soft Skills
+                    <!-- Button trigger modal -->
+                    <i class="fa-solid fa-circle-plus fa-xs modificar1" type="button" data-bs-toggle="modal" data-bs-target="#habilidAgregar"></i>
+            </h5><br>
+            <hr class="divider2">
+
+            <!--Iteración sobre la variable de instancia y presentación de datos mediante iteración-->
+            <div *ngFor="let habilidadsoft of habilidadesSoft">
+            <h6 class="text-skills"><i [ngClass]="habilidadsoft.icono"></i>&nbsp;&nbsp;&nbsp;{{habilidadsoft.habilidad}}
+                    <!-- Button trigger modal -->
+                    <ul class="list-group list-group-horizontal modificar madificarItems">
+                      <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" data-bs-toggle="modal" data-bs-target="#habilidEditar"></i></li>
+                      <li class="nav-item list-group-item"><i class="fa-solid fa-trash-can fa-xs"></i></li>
+                    </ul>
+            </h6><br>
+              <div class="progress progress3 mb-4">
+                <div class="progress-bar" role="progressbar" aria-label="Example with label" [ngStyle]="{width:habilidadsoft.porcentajeProgreso}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{habilidadsoft.nivel}}</div>
+              </div>
+          </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+  <app-introhabilidades></app-introhabilidades>
+  <app-habiliagregar></app-habiliagregar>
+  <app-habilieditar></app-habilieditar>
+

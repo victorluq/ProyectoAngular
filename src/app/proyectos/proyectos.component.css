@@ -1,0 +1,20 @@
+/*Sección Proyecto*/
+
+.card-text{
+    color: #070707;
+}
+
+.card{
+    border-color:#ffffff;
+}
+
+.unproyecto{
+    padding: 2rem;
+}
+
+.text-pequeño{
+    font-size: small;
+    font-weight:400;
+    color: #ffffff;
+}
+

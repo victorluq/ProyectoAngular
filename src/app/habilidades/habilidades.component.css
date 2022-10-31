@@ -1,0 +1,27 @@
+/*Sección habilidades*/
+
+section.habilidades{
+    background-color: #050505de;
+}
+
+.text-skills{
+    font-size:medium;
+    font-weight: 300;
+    margin-bottom:-1rem;
+    
+}
+
+.progress1{
+    --bs-progress-bar-bg: #c9c551;
+    --bs-progress-height: 0.9rem;
+}
+
+.progress2{
+    --bs-progress-bar-bg: #DEA60B;
+    --bs-progress-height: 0.9rem;
+}
+
+.progress3{
+    --bs-progress-bar-bg: #F57200;
+    --bs-progress-height: 0.9rem;
+}

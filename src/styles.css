@@ -1,1 +1,88 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url(../src/assets/Img/nuevafondo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+section.sobreMi,
+section.habilidades,
+section.proyectos,
+section.contacto{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #fcfdfd;
+}
+
+.text-pequeño{
+    font-size: small;
+    font-weight:400;
+    color: #ffffff;
+}
+
+.btn-primary{
+    --bs-btn-bg: #F63C12;;
+    --bs-btn-border-color: #F63C12;
+    --bs-btn-color: #ffffff;
+    --bs-btn-hover-bg: #4b4949;
+    --bs-btn-hover-border-color: #4b4949;
+    --bs-btn-active-bg: #F63C12;
+    --bs-btn-active-border-color: #F63C12;
+    --bs-btn-focus-shadow-rgb: 246, 60, 18;
+}
+
+.divider{
+    color: #F63C12;
+    width: 15rem;
+    margin-top: -1rem;
+    border-top: 0.2rem solid;
+    opacity: 1;
+}
+
+.divider2{
+    color: #F63C12;
+    width: 10rem;
+    margin-top: -1rem;
+    border-top: 0.1rem solid;
+    opacity: 1;
+    
+}
+
+/* Dashboard*/
+
+.fa-solid.fa-pen-to-square.fa-xs,
+.fa-solid.fa-trash-can.fa-xs{
+    color:#ffffff;
+    cursor: pointer;
+}
+
+.fa-solid.fa-pen-to-square.fa-xs:hover,
+.fa-solid.fa-circle-plus.fa-xs:hover,
+.fa-solid.fa-trash-can.fa-xs:hover{
+    color:#F63C12;
+    transform: scale(1.5);
+
+}
+
+.fa-solid.fa-pen-to-square.fa-2xs:hover{
+    color:#F63C12;
+    transform: scale(1.5);
+}
+
+.modificar{
+    float:right;
+    margin-top: -0.5rem;
+}
+
+.modificar1{
+    float:right;
+    padding-top: 1.3rem;
+}
+
+.list-group{
+    --bs-list-group-bg: transperent;
+    --bs-list-group-border-color: transperent;
+}

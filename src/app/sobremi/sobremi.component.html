@@ -1,0 +1,93 @@
+  <!--Inicio de Sección SobreMi--> 
+  <section id="sobreMi" class="sobreMi bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+          <h5>Sobre Mí</h5>
+              
+              <!-- Button trigger modal -->
+              <i class="fa-solid fa-pen-to-square fa-xs modificar" type="button" data-bs-toggle="modal" data-bs-target="#perfilprofesional"></i>
+
+          <br>
+        </div>
+      </div>
+      <hr class="divider">
+      
+      <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+              <h6><p class="text-pequeño"> {{sobremi}} </p></h6><br>
+        </div>
+      </div>
+
+        <div class="row">
+          <!--Columna EDUCACIÓN-->
+          <div class="col col-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="titulosobremi">
+            <h5>Educación:
+                
+                <!-- Button trigger modal -->
+                <i class="fa-solid fa-circle-plus fa-xs modificar1" type="button" data-bs-toggle="modal" data-bs-target="#educacionAgregar"></i>
+
+            </h5><br>
+            </div>
+            <hr class="divider2">
+
+            <!--Iteración sobre la variable de instancia y presentación de datos mediante iteración-->
+            <div class="row mb-4" *ngFor="let education of educations" (onDeleteItem)="deleteItem(education)">
+              <div class="col-2 col-sm-2 col-md-2 col-lg-2 icono">
+                <img [src]="education.imgEdu" [ngStyle]="{width:education.sizeImg}">
+              </div>
+              <div class="col-10 col-sm-10 col-md-10 col-lg-10">
+                <h6 class="tituloEdu">{{education.titulo}}</h6>
+                      <!-- Button trigger modal -->
+                      <ul class="list-group list-group-horizontal modificar">
+                        <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" data-bs-toggle="modal" data-bs-target="#educacionEditar"></i></li>
+                        <li class="nav-item list-group-item"><i class="fa-solid fa-trash-can fa-xs" (click)="onDelete(education)"></i></li>
+                      </ul><br>
+                <h6 class="añoEdu">{{education.inicio}}-{{education.fin}}</h6><br>
+                <h6 class="uniEdu"><i>{{education.institucion}}</i></h6><br>
+                <h6 class="descripcionEdu">{{education.descripcionEdu}}</h6>
+              </div>
+            </div><br>
+              
+          </div>
+        
+          
+          <!--Columna Experiencia-->
+          <div class="col col-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="titulosobremi">
+              <h5>Experiencia:
+                    <!-- Button trigger modal -->
+                    <i class="fa-solid fa-circle-plus fa-xs modificar1" type="button" data-bs-toggle="modal" data-bs-target="#experienciaAgregar"></i>
+              </h5><br>
+            </div>
+            <hr class="divider2">
+
+              <!--Iteración sobre la variable de instancia y presentación de datos mediante iteración-->
+              <div class="row" *ngFor="let experiencia of experiencias">
+                <div class="col-2 col-sm-2 col-md-2 col-lg-2 iconounefa">
+                  <img [src]="experiencia.imgExp" [ngStyle]="{width:experiencia.sizeImg}">
+                </div>
+                <div class="col-10 col-sm-10 col-md-10 col-lg-10">
+                <h6 class="tituloEdu">{{experiencia.puesto}}</h6>
+                      <!-- Button trigger modal -->
+                      <ul class="list-group list-group-horizontal modificar">
+                        <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" data-bs-toggle="modal" data-bs-target="#experienciaEditar"></i></li>
+                        <li class="nav-item list-group-item"><i class="fa-solid fa-trash-can fa-xs" (click)="onDelete(experiencia)"></i></li>
+                      </ul><br>
+                <h6 class="añoEdu">{{experiencia.inicio}}-{{experiencia.fin}}</h6><br>
+                <h6 class="uniEdu"><i>{{experiencia.empresa}}</i></h6><br>
+                <h6 class="descripcionEdu">{{experiencia.descripcionExp}}
+                </h6><br><br>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <app-perfilmodal></app-perfilmodal>
+  <app-eduagregar></app-eduagregar>
+  <app-edueditar></app-edueditar>
+  <app-expeagregar></app-expeagregar>
+  <app-expeeditar></app-expeeditar>

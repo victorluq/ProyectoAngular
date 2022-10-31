@@ -1,0 +1,39 @@
+/*Sección Inicio*/
+
+section.inicio{
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(180deg, rgba(0,0,0,0.3029586834733894) 0%, rgba(0,0,0,0.3337710084033614) 0%, rgba(0,0,0,0.9640231092436975) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0,0,0,0.3029586834733894) 0%, rgba(0,0,0,0.3337710084033614) 0%, rgba(0,0,0,0.9640231092436975) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.3029586834733894) 0%, rgba(0,0,0,0.3337710084033614) 0%, rgba(0,0,0,0.9640231092436975) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);    background-size: 100%;
+    background-attachment: fixed;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    background-size: cover;
+    color: #fdfeff;
+    text-shadow: #030303 0.1em 0.1em 0.2em;
+    margin:0%;
+    font-size:xx-large;
+    font-weight: 900;
+}
+
+.rounded-circle{
+    width: 17rem;
+}
+
+.redes{
+    color: #ffffff;
+}
+
+
+.redes:hover{
+    color: #F63C12;
+    transform: scale(1.5); 
+}
+
+
+.nav-link:hover{
+    color: #F63C12;
+    transform: scale(1.08);
+}
+

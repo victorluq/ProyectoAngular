@@ -1,5 +1,4 @@
 /*Ventana Modal*/
-
 .form-control{
     border-color: #ffffff;
     background-color: #ffffff31;
@@ -7,20 +6,11 @@
  }
  
 .ventanamodal{
-    border-color: #F63C12;
     background-color: #ffffff;
     color: #070707; 
 }
 
 .modal-content{
     border-color: #F63C12;
-    background-color: #ffffff;
-}
-
-.border-danger{
-    color: rgb(12, 12, 12);
-}
-
-.error{
-    color: red;
+    background-color: #ffffffc7;
 }

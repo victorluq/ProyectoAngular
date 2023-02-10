@@ -1,6 +1,14 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { dato } from '../datos';
-import { DatosService } from '../servicios/datos.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+//import { dato } from '../datos';
+import { Experiencia } from '../Entity/experiencia';
+import { Education } from '../Entity/education';
+import { Aboutme } from '../Entity/aboutme';
+//import { DatosService } from '../servicios/datos.service';
+import { ExperienciaService } from '../servicios/experiencia.service';
+import { EducationService } from '../servicios/education.service';
+import { AboutmeService } from '../servicios/aboutme.service';
+import { TokenService } from '../servicios/token.service';
 
 @Component({
   selector: 'app-sobremi',
@@ -9,40 +17,64 @@ import { DatosService } from '../servicios/datos.service';
 })
 export class SobreMiComponent implements OnInit {
 
-  datos: dato[] = []
-
-  @Output() onDeleteItem: EventEmitter<any>= new EventEmitter();
-
-  sobremi: string = "";
-  educations: any = [];
-  experiencias: any = [];
+  aboutmes: Aboutme[] = [] //se llama al modelo que es un array
+  isLogged = false; 
+  experiencias: Experiencia[] = []  //se llama al modelo que es un array
+  educations: Education[] = [] //se llama al modelo que es un array
+  
 
 
-  constructor(private datosService: DatosService) { }
+  constructor(private serviExp: ExperienciaService,
+              private serviEdu: EducationService,
+              private serviAbout:AboutmeService,
+              private tokenService: TokenService) { }
+
+
 
   ngOnInit(): void {
-    this.datosService.getDatos().subscribe(datos => {
-      console.log(datos);
-      // se define la información a mostrar
-      this.sobremi=datos.sobremi;
-      this.educations=datos.educations;
-      this.experiencias=datos.experiencias;
-  });
-
+    this.cargarExperiencia();
+    this.cargarEducation();  
+    this.cargarAboutme();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+     } else {
+      this.isLogged = false;
+    }
   }
 
-  onDelete(education:any){
-    this.onDeleteItem.emit(education);
+  cargarExperiencia(): void {
+      this.serviExp.list().subscribe(data => {this.experiencias = data})
+}
+  cargarEducation(): void {
+      this.serviEdu.list().subscribe(data => {this.educations = data})
+}
+  cargarAboutme(): void{
+      this.serviAbout.list().subscribe(data => {this.aboutmes = data})
   }
 
-  deleteItem(education:any){
-    console.log("borrado")
-    //this.datosService.deleteItem(education)
-    //.subscribe(
-    //  () => (
-    //  this.educations = this.educations.filter( (t: { id: any; }) => t.id !== education.id)
-    //  ))
-      
+  deleteExp(id?: number) {
+    if (id != undefined){
+      this.serviExp.eliminarExperiencia(id).subscribe(
+        data => {
+        }, () => {
+        alert("Experiencia fue eliminada correctamente")
+        this.cargarExperiencia();
+      })
+    }
   }
+
+  deleteEdu(id?: number) {
+    if (id != undefined){
+      this.serviEdu.eliminarEducation(id).subscribe(
+        data => {
+        }, () => {
+        alert("La educación fue eliminada correctamente")
+        this.cargarEducation();
+      })
+    }
+  }
+
+
+
 
 }

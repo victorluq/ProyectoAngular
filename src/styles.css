@@ -86,3 +86,15 @@ section.contacto{
     --bs-list-group-bg: transperent;
     --bs-list-group-border-color: transperent;
 }
+
+.error{
+    color: red;
+}
+
+.sinerror{
+    color: green;
+}
+
+.form-control.is-valid{
+    color: green;
+}

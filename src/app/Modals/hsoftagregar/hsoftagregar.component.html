@@ -1,0 +1,95 @@
+<!-- Ventana Modal Habilidad a Agregar-->
+<div class="modal fade" id="habilidSoftAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Habilidad Soft</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         <!-- Formulario experiencia Ventana Modal -->
+         <form class="ventana-modal" [formGroup]="form" (ngSubmit)="onEnviar($event)" name="habilidSoftAgregar">
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Habilidad</label>
+              <input type="text" class="form-control ventanamodal" id="habilidad"  [class.border-danger]="HabilidadValid"
+              [(ngModel)]="habilidad" formControlName="habilidad"
+              [ngClass]="{'is-invalid': Habilidad?.errors && Habilidad?.touched}" [ngClass]="{'is-valid': !Habilidad?.errors}">
+            <div *ngIf="Habilidad?.errors && Habilidad?.touched">
+              <p *ngIf="Habilidad?.hasError('required')" class="error">
+                El nomnbre de la habilidad es requerida.
+              </p>
+            </div>
+            <div *ngIf="!Habilidad?.errors && Habilidad?.touched">
+              <p *ngIf="!Habilidad?.hasError('required')" class="sinerror">
+                Nomnbre de la habilidad ingresado.
+              </p>
+            </div>
+          </div>
+
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Icono de Font Awesome</label>
+                <input type="email" class="form-control ventanamodal" id="icono"  [class.border-danger]="IconoValid"
+                [(ngModel)]="icono" formControlName="icono"
+                [ngClass]="{'is-invalid': Icono?.errors && Icono?.touched}" [ngClass]="{'is-valid': !Icono?.errors}">
+              <div *ngIf="Icono?.errors && Icono?.touched">
+                <p *ngIf="Icono?.hasError('required')" class="error">
+                  El formato del Icono es requerido.
+                </p>
+              </div>
+              <div *ngIf="!Icono?.errors && Icono?.touched">
+                <p *ngIf="!Icono?.hasError('required')" class="sinerror">
+                 Formato de Icono ingresado.
+                </p>
+              </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Nivel (Describir en que entorno o contexto)</label>
+                <input type="email" class="form-control ventanamodal" id="nivel"  [class.border-danger]="NivelValid"
+                [(ngModel)]="nivel" formControlName="nivel"
+                [ngClass]="{'is-invalid': Nivel?.errors && Nivel?.touched}" [ngClass]="{'is-valid': !Nivel?.errors}">
+              <div *ngIf="Nivel?.errors && Nivel?.touched">
+                <p *ngIf="Nivel?.hasError('required')" class="error">
+                    El nivel de conocimiento es requerido.
+                </p>
+              </div>
+              <div *ngIf="!Nivel?.errors && Nivel?.touched">
+                <p *ngIf="!Nivel?.hasError('required')" class="sinerror">
+                    Nivel de conocimiento ingresado.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Porcentajes de conocimiento (agregar símbolo %)</label>
+              <input type="text" class="form-control ventanamodal" id="porcentajeProgreso"  [class.border-danger]="PorcentajeProgresoValid"
+              [(ngModel)]="porcentajeProgreso" formControlName="porcentajeProgreso"
+              [ngClass]="{'is-invalid': PorcentajeProgreso?.errors && PorcentajeProgreso?.touched}" [ngClass]="{'is-valid': !PorcentajeProgreso?.errors}">
+            <div *ngIf="PorcentajeProgreso?.errors && PorcentajeProgreso?.touched">
+              <p *ngIf="PorcentajeProgreso?.hasError('required')" class="error">
+                El porcentaje de dominio de la habilidad es requerido.
+              </p>
+            </div>
+            <div *ngIf="!PorcentajeProgreso?.errors && PorcentajeProgreso?.touched">
+              <p *ngIf="!PorcentajeProgreso?.hasError('required')" class="sinerror">
+               Porcentaje ingresado.
+              </p>
+            </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-modal" (click)="limpiar()">
+                <i class="fa-solid fa-broom"></i>&nbsp;Limpiar</button>
+                <button type="submit" class="btn btn-primary btn-modal">¡Guardar!</button>
+            </div>
+          
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+

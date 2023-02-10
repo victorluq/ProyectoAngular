@@ -1,0 +1,58 @@
+<header class="fondo navbar fixed-top">
+    <ul style="list-style:none" class="list-group-horizontal list-group">
+        <li><a class="navbar-brand" href="#inicio"><img src="../../assets/Img/LogoAP.png" alt="logo" class="logo"  width="70"/></a></li>
+    </ul>
+</header>
+
+<div class="row">
+<div class="col-sm-2 col-md-2 col-lg-4 col-xl-4">
+</div>
+<div class="container border col-sm-8 col-md-8 col-lg-4 col-xl-4">
+  <h5 class="title text-center">Editar Educación</h5><br>
+  
+  <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <input type="hidden" formControlName="id">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">URL del logo de la institución</label>
+        <input type="text" class="form-control ventanamodal" id="imgEdu" 
+        [(ngModel)]="educat.imgEdu" name="imgEdu">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Tamaño del logo (%)</label>
+      <input type="text" class="form-control ventanamodal" id="sizeImg" 
+      [(ngModel)]="educat.sizeImg" name="sizeImg">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Título Obtenido</label>
+      <input type="text" class="form-control ventanamodal" id="titulo"
+      [(ngModel)]="educat.titulo" name="titulo">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Fecha de inicio</label>
+        <input type="email" class="form-control ventanamodal" id="inicio"
+        [(ngModel)]="educat.inicio" name="inicio">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Fecha de culminación</label>
+      <input type="email" class="form-control ventanamodal" id="fin"
+     [(ngModel)]="educat.fin" name="fin">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Institución</label>
+      <input type="email" class="form-control ventanamodal" id="institucion"
+      [(ngModel)]="educat.institucion" name="institucion">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+      <textarea class="form-control ventanamodal" id="descripcionEdu" rows="3"
+      [(ngModel)]="educat.descripcionEdu" name="descripcionEdu"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary btn-modal" [routerLink]="['']" ><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Salir</button> &nbsp; &nbsp;
+      <button type="submit" class="btn btn-primary btn-modal">¡Guardar!</button>
+    </div>
+  </form>
+</div>
+<div class="col-sm-2 col-md-2 col-lg-4 col-xl-4">
+</div>
+</div>

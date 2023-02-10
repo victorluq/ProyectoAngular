@@ -1,44 +1,139 @@
-        <!-- Ventana Modal Proyecto a Agregar-->
-        <div class="modal fade" id="proyectoAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Agregar Proyecto</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-      
-                 <!-- Formulario experiencia Ventana Modal -->
-                 <form class="ventana-modal">
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Título</label>
-                      <input type="email" class="form-control ventanamodal" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">Ingrese el título del proyecto</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Descripción</label>
-                        <input type="email" class="form-control ventanamodal" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">Agregue la descripción del proyecto</div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="formFileSm" class="form-label ventanamodal">Imágen del proyecto</label>
-                      <input class="form-control form-control-sm ventanamodal" id="formFileSm" type="file">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">URL del live demo</label>
-                        <input type="email" class="form-control ventanamodal" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">Agregue la URL del live demo</div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">URL del Repositorio</label>
-                      <input type="email" class="form-control ventanamodal" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">Agregue la URL del repositorio de GitHub</div>
-                  </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-modal">¡Guardar!</button>
-                </div>
-              </div>
+<!-- Ventana Modal Educación Agregar-->
+<div class="modal fade" id="proyectoAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Proyecto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Formulario  Ventana Modal -->
+        <form class="ventana-modal" [formGroup]="form" (ngSubmit)="onEnviar($event)" name="proyectoAgregar">
+
+          <div class="mb-3">
+            <label for="titulo" class="form-label">Título del Proyecto</label>
+            <input type="text" class="form-control ventanamodal" id="titulo" [class.border-danger]="TituloValid"
+              [(ngModel)]="titulo" formControlName="titulo"
+              [ngClass]="{'is-invalid': Titulo?.errors && Titulo?.touched}" [ngClass]="{'is-valid': !Titulo?.errors}">
+            <div *ngIf="Titulo?.errors && Titulo?.touched">
+              <p *ngIf="Titulo?.hasError('required')" class="error">
+                El título del proyecto es requerido.
+              </p>
             </div>
-        </div>
+            <div *ngIf="!Titulo?.errors && Titulo?.touched">
+              <p *ngIf="!Titulo?.hasError('required')" class="sinerror">
+                Título del proyecto ingresado.
+              </p>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="proyectoDescripcion" class="form-label">Descripción del Proyecto</label>
+            <input type="text" class="form-control ventanamodal" id="descripcion"
+              [class.border-danger]="DescripcionValid" [(ngModel)]="descripcion" formControlName="descripcion"
+              [ngClass]="{'is-invalid': Descripcion?.errors && Descripcion?.touched}"
+              [ngClass]="{'is-valid': !Descripcion?.errors}">
+            <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+              <p *ngIf="Descripcion?.hasError('required')" class="error">
+                La descripción del proyecto es requerida.
+              </p>
+            </div>
+            <div *ngIf="!Descripcion?.errors && Descripcion?.touched">
+              <p *ngIf="!Descripcion?.hasError('required')" class="sinerror">
+                Descripción del proyecto ingresada.
+              </p>
+            </div>
+          </div>
+
+
+
+
+          <div class="mb-3">
+            <label for="proyectoimgproyecto" class="form-label">Url de la imágen del proyecto</label>
+            <input type="text" class="form-control ventanamodal" id="imgproyecto"
+              [class.border-danger]="ImgproyectoValid" [(ngModel)]="imgproyecto" formControlName="imgproyecto"
+              [ngClass]="{'is-invalid': Imgproyecto?.errors && Imgproyecto?.touched}" [ngClass]="{'is-valid': !Imgproyecto?.errors}">
+            <div *ngIf="Imgproyecto?.errors && Imgproyecto?.touched">
+              <p *ngIf="Imgproyecto?.hasError('required')" class="error">
+                La imágen del proyecto es requerida.
+              </p>
+            </div>
+            <div *ngIf="!Imgproyecto?.errors && Imgproyecto?.touched">
+              <p *ngIf="!Imgproyecto?.hasError('required')" class="sinerror">
+                Imágen de proyecto ingresada.
+              </p>
+            </div>
+          </div>
+
+
+
+
+          <div class="mb-3">
+            <label for="urllivedemo" class="form-label">Url live demo</label>
+            <input type="text" class="form-control ventanamodal" id="urllivedemo" [class.border-danger]="UrllivedemoValid"
+              [(ngModel)]="urllivedemo" formControlName="urllivedemo"
+              [ngClass]="{'is-invalid': Urllivedemo?.errors && Urllivedemo?.touched}" [ngClass]="{'is-valid': !Urllivedemo?.errors}">
+            <div *ngIf="Urllivedemo?.errors && Urllivedemo?.touched">
+              <p *ngIf="Urllivedemo?.hasError('required')" class="error">
+                La Url del live demo es requerida.
+              </p>
+            </div>
+            <div *ngIf="!Urllivedemo?.errors && Urllivedemo?.touched">
+              <p *ngIf="!Urllivedemo?.hasError('required')" class="sinerror">
+                Url del live demo ingresada.
+              </p>
+            </div>
+          </div>
+
+
+
+
+          <div class="mb-3">
+            <label for="urlrepositorio" class="form-label">Url del repositorio</label>
+            <input type="text" class="form-control ventanamodal" id="urlrepositorio" [class.border-danger]="UrlrepositorioValid"
+              [(ngModel)]="urlrepositorio" formControlName="urlrepositorio" [ngClass]="{'is-invalid': Urlrepositorio?.errors && Urlrepositorio?.touched}"
+              [ngClass]="{'is-valid': !Urlrepositorio?.errors}">
+            <div *ngIf="Urlrepositorio?.errors && Urlrepositorio?.touched">
+              <p *ngIf="Urlrepositorio?.hasError('required')" class="error">
+                La Url del repositorio es requerida.
+              </p>
+            </div>
+            <div *ngIf="!Urlrepositorio?.errors && Urlrepositorio?.touched">
+              <p *ngIf="!Urlrepositorio?.hasError('required')" class="sinerror">
+               Url del repositorio ingresada.
+              </p>
+            </div>
+          </div>
+
+
+
+          <div class="mb-3">
+            <label for="fecha" class="form-label">Fecha de elaboración</label>
+            <input type="date" class="form-control ventanamodal" id="fecha" [(ngModel)]="fecha"
+              formControlName="fecha" [ngClass]="{'is-invalid': Fecha?.errors && Fecha?.touched}"
+              [ngClass]="{'is-valid': !Fecha?.errors}">
+            <div *ngIf="Fecha?.errors && Fecha?.touched">
+              <p *ngIf="Fecha?.hasError('required')" class="error">
+              La Fecha de elaboración es requerida.
+              </p>
+            </div>
+            <div *ngIf="!Fecha?.errors && Fecha?.touched">
+              <p *ngIf="!Fecha?.hasError('required')" class="sinerror">
+              Fecha de elaboración ingresada.
+              </p>
+            </div>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-modal" (click)="limpiar()">
+              <i class="fa-solid fa-broom"></i>&nbsp;Limpiar</button>
+            <button type="submit" class="btn btn-primary btn-modal">¡Guardar!</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

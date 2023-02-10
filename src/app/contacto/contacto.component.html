@@ -2,14 +2,19 @@
     <div class="container">
       
       <div class="row">
-        <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
-          <h5>Contacto</h5><br>
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12" *ngFor="let aboutme of aboutmes">
+          <h5>Contacto
+            <!-- Button trigger modal -->
+            <ul class="list-group list-group-horizontal modificar madificarItems">
+              <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" [routerLink]="['/contactoeditar', aboutme.id]" *ngIf="isLogged"></i></li>
+            </ul>
+          </h5><br>
         </div>
       </div>
       <hr class="divider">
-      <div class="row">
+      <div class="row" *ngFor="let aboutme of aboutmes">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
-              <h6><p class="text-pequeño">{{descripcion_contacto}}
+              <h6><p class="text-pequeño">{{aboutme.descripcion_contacto}}
 
               </p></h6><br>
           </div>
@@ -47,3 +52,4 @@
     </div>
           
 </section>
+<app-contactomodal></app-contactomodal>

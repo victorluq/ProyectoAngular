@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 // esto es el servicio creado que toma el Json
-import { DatosService } from '../servicios/datos.service';
-import { UiService } from '../servicios/ui.service';
+//import { DatosService } from '../servicios/datos.service';
+//import { UiService } from '../servicios/ui.service';
 import { Subscription } from 'rxjs';
+import { Aboutme } from '../Entity/aboutme';
+import { AboutmeService } from '../servicios/aboutme.service';
+import { TokenService } from '../servicios/token.service';
+
 
 @Component({
   selector: 'app-inicio',
@@ -11,38 +16,32 @@ import { Subscription } from 'rxjs';
 })
 export class InicioComponent implements OnInit {
 
-  //crear variable de instancia para almacenar los datos con los que trata el servicio
-  nombre:string = "";
-  apellido:string = "";
-  profesion:string = "";
-  imgperfil:string = "";
-  sobremi:string = "";
-  showBtn: boolean = false;
-  subscription?: Subscription;
+  isLogged = false;  
+  aboutmes: Aboutme[] = [] //se llama al modelo que es un array
 
 
   // inyectar el servicio para tener acceso en la calse a los métodos
-  constructor(private datosService: DatosService,
-              private uiService: UiService) { }
+  constructor(private serviAbout: AboutmeService,
+              private router: Router,
+              private tokenService: TokenService) { }
 
   ngOnInit(): void {
-    // esto es para almacenar en la variable de instancia los datos recuperados por el servicio
-    this.datosService.getDatos().subscribe(datos => {
-      console.log(datos);
-      // se define la información a mostrar
-      this.nombre=datos.nombre;
-      this.apellido=datos.apellido;
-      this.profesion=datos.profesion;
-      this.imgperfil=datos.imgperfil;
-      this.sobremi=datos.sobremi;
-  })
+    this.cargarAboutme();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+     } else {
+      this.isLogged = false;
+    }
+  }
 
-  toggleShowBtn();{
-    this.uiService.toggleShowBtn();
-  }
-  }
+  cargarAboutme(): void{
+    this.serviAbout.list().subscribe(data => {this.aboutmes = data})
 }
-function toggleShowBtn() {
-  throw new Error('Function not implemented.');
+
+  //toggleShowBtn();{
+  //  this.uiService.toggleShowBtn();
+  //}
+  
 }
+
 

@@ -1,0 +1,59 @@
+<header class="fondo navbar fixed-top">
+  <ul style="list-style:none" class="list-group-horizontal list-group">
+      <li><a class="navbar-brand" href="#inicio"><img src="../../assets/Img/LogoAP.png" alt="logo" class="logo"  width="70"/></a></li>
+  </ul>
+</header>
+
+<div class="row">
+<div class="col-sm-2 col-md-2 col-lg-4 col-xl-4">
+</div>
+<div class="container border col-sm-8 col-md-8 col-lg-4 col-xl-4">
+  <h5 class="title text-center">Editar Experiencia</h5><br>
+  
+  <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <input type="hidden" formControlName="id">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">URL del logo de la empresa</label>
+        <input type="email" class="form-control ventanamodal" id="imgExp" 
+        [(ngModel)]="expLab.imgExp" name="imgExp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Tamaño del logo (%)</label>
+      <input type="email" class="form-control ventanamodal" id="sizeImg" 
+      [(ngModel)]="expLab.sizeImg" name="sizeImg">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Puesto o cargo</label>
+      <input type="email" class="form-control ventanamodal" id="puesto"
+      [(ngModel)]="expLab.puesto" name="puesto">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Fecha de inicio</label>
+        <input type="email" class="form-control ventanamodal" id="inicio"
+        [(ngModel)]="expLab.inicio" name="inicio">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Fecha de culminación</label>
+      <input type="email" class="form-control ventanamodal" id="fin"
+     [(ngModel)]="expLab.fin" name="fin">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Empresa</label>
+      <input type="email" class="form-control ventanamodal" id="empresa"
+      [(ngModel)]="expLab.empresa" name="empresa">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+      <textarea class="form-control ventanamodal" id="descripcionExp" rows="3"
+      [(ngModel)]="expLab.descripcionExp" name="descripcionExp"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary btn-modal" [routerLink]="['']" ><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Salir</button> &nbsp; &nbsp;
+      <button type="submit" class="btn btn-primary btn-modal">¡Guardar!</button>
+    </div>
+  </form>
+</div>
+<div class="col-sm-2 col-md-2 col-lg-4 col-xl-4">
+</div>
+</div>
+

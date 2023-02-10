@@ -1,18 +1,4 @@
-/*Ventana Modal*/
-
-.form-control{
-    border-color: #ffffff;
-    background-color: #ffffff31;
-    color: #070707;
- }
- 
-.ventanamodal{
-    border-color: #F63C12;
-    background-color: #ffffff;
-    color: #070707; 
-}
-
 .modal-content{
     border-color: #F63C12;
-    background-color: #ffffff;
+    background-color: #ffffffc7;
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from '../servicios/datos.service';
+//import { DatosService } from '../servicios/datos.service';
+import { Aboutme } from '../Entity/aboutme';
+import { AboutmeService } from '../servicios/aboutme.service';
+import { TokenService } from '../servicios/token.service';
 
 @Component({
   selector: 'app-contacto',
@@ -7,17 +10,23 @@ import { DatosService } from '../servicios/datos.service';
   styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent implements OnInit {
-  descripcion_contacto: string = "";
+  isLogged = false;
+  aboutmes: Aboutme[] = [] //se llama al modelo que es un array
 
-  constructor(private datosService: DatosService) { }
+  constructor(private serviAbout: AboutmeService,
+              private tokenService: TokenService) { }
 
   ngOnInit(): void {
-    this.datosService.getDatos().subscribe(datos => {
-      // se define la información a mostrar
-      this.descripcion_contacto= datos.descripcion_contacto;
-  });
+    this.cargarAboutme();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+     } else {
+      this.isLogged = false;
+    }
+  }
 
-
+  cargarAboutme(): void{
+    this.serviAbout.list().subscribe(data => {this.aboutmes = data})
   }
 
 }

@@ -1,8 +1,9 @@
 <body>
-    <header class="fondo">
+    <header class="fondo navbar fixed-top">
         <ul style="list-style:none" class="list-group-horizontal list-group">
             <li><a class="navbar-brand" href="#inicio"><img src="../../assets/Img/LogoAP.png" alt="logo" class="logo"  width="70"/></a></li>
-            <li><button type="button" class="btn btn-primary login" data-bs-toggle="modal" data-bs-target="#exampleModal">login</button></li>
+            <li><button type="button" class="btn btn-primary login" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="!isLogged">login</button></li>
+            <li><button type="button" class="btn btn-primary login" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onLogOut()" *ngIf="isLogged">Logout</button></li>
         </ul>
         <nav>
             <div class="menu">

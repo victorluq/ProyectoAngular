@@ -1,21 +1,21 @@
 <section id="proyectos" class="proyectos bg-dark">
     <div class="container">
       <div class="row">
-        <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12" *ngFor="let aboutme of aboutmes">
           <h5>Proyectos
             <!-- Button trigger modal -->
               <ul class="list-group list-group-horizontal modificar madificarItems">
-              <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" data-bs-toggle="modal" data-bs-target="#proyectoIntroduccion"></i></li>
-              <i class="fa-solid fa-circle-plus fa-xs modificar1" type="button" data-bs-toggle="modal" data-bs-target="#proyectoAgregar"></i>
+              <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" [routerLink]="['/pintroeditar', aboutme.id]" *ngIf="isLogged"></i></li>
+              <i class="fa-solid fa-circle-plus fa-xs modificar1" type="button" data-bs-toggle="modal" data-bs-target="#proyectoAgregar" *ngIf="isLogged"></i>
             </ul>
 
           </h5><br>
         </div>
       </div>
       <hr class="divider">
-      <div class="row">
+      <div class="row" *ngFor="let aboutme of aboutmes">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
-              <h6><p class="text-pequeño"> {{descripcion_proyectos}}
+              <h6><p class="text-pequeño"> {{aboutme.descripcion_proyectos}}
               </p></h6><br>
           </div>
       </div>
@@ -29,17 +29,17 @@
           <div class="card mb-3 bg-dark">
             <img [src]="proyecto.imgproyecto" class="card-img-top" alt="developerVictorUzcategui">
             <div class="card-body">
-              <h5 class="card-title">{{proyecto.Titulo}}
+              <h5 class="card-title">{{proyecto.titulo}}
 
                 <!-- Button trigger modal -->
                 <ul class="list-group list-group-horizontal modificar">
-                  <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" data-bs-toggle="modal" data-bs-target="#proyectoEditar"></i></li>
-                  <li class="nav-item list-group-item"><i class="fa-solid fa-trash-can fa-xs"></i></li>
+                  <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" [routerLink]="['/proyeditar', proyecto.id]" *ngIf="isLogged"></i></li>
+                  <li class="nav-item list-group-item"><i class="fa-solid fa-trash-can fa-xs" *ngIf="isLogged" (click)="delete(proyecto.id)"></i></li>
               </ul><br>
               </h5>
-              <p class="card-text text-pequeño">{{proyecto.Descripcion}}
+              <p class="card-text text-pequeño">{{proyecto.descripcion}}
               </p>
-              <p class="card-text"><small class="text-muted">Elaborado en {{proyecto.fecha}}</small></p>
+              <p class="card-text"><small class="text-muted">Elaborado en {{proyecto.fecha | date:"MM-yyyy"}}</small></p>
               <div class="d-grid gap-2">
                 <button class="btn btn-primary card-proyectos" type="button">Live Demo</button>
                 <button class="btn btn-primary card-proyectos" type="button">Repositorio GitHub</button>

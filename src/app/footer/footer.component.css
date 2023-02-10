@@ -9,7 +9,12 @@ section.footer{
 
 .iconfooter{
     padding-top: 1.5rem;
+    color: #ffffff;
+}
+
+.iconfooter:hover{
     color: #F63C12;
+    transform: scale(1.5);
 }
 
 .redesfooter{

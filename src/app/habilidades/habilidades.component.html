@@ -2,17 +2,17 @@
     <div class="container">
       
       <div class="row">
-        <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12" *ngFor="let aboutme of aboutmes">
           <h5>Habilidades</h5>
               <!-- Button trigger modal -->
-              <i class="fa-solid fa-pen-to-square fa-xs modificar" type="button" data-bs-toggle="modal" data-bs-target="#introhabilidades"></i>
+              <i class="fa-solid fa-pen-to-square fa-xs modificar" type="button" [routerLink]="['/hintroeditar', aboutme.id]" *ngIf="isLogged"></i>
           <br>
         </div>
       </div>
       <hr class="divider">
-      <div class="row">
+      <div class="row" *ngFor="let aboutme of aboutmes">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
-              <h6><p class="text-pequeño">{{descripcion_habilidades}}
+              <h6><p class="text-pequeño">{{aboutme.descripcion_habilidades}}
               </p></h6><br>
           </div>
       </div>
@@ -23,17 +23,17 @@
           <div class="col col-12 col-sm-12 col-md-4 col-lg-4">
             <h5>Front-End Skills
                   <!-- Button trigger modal -->
-                  <i class="fa-solid fa-circle-plus fa-xs modificar1" type="button" data-bs-toggle="modal" data-bs-target="#habilidAgregar"></i>
+                  <i class="fa-solid fa-circle-plus fa-xs modificar1" type="button" data-bs-toggle="modal" data-bs-target="#habilidAgregar" *ngIf="isLogged"></i>
             </h5><br>
             <hr class="divider2">
 
             <!--Iteración sobre la variable de instancia y presentación de datos mediante iteración-->
-            <div *ngFor="let habilidadfront of habilidadesFront">
+            <div *ngFor="let habilidadfront of habilidadesFronts">
               <h6 class="text-skills"><i [ngClass]="habilidadfront.icono"></i>&nbsp;&nbsp;&nbsp;{{habilidadfront.habilidad}}
                               <!-- Button trigger modal -->
                               <ul class="list-group list-group-horizontal modificar madificarItems">
-                                <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" data-bs-toggle="modal" data-bs-target="#habilidEditar"></i></li>
-                                <li class="nav-item list-group-item"><i class="fa-solid fa-trash-can fa-xs"></i></li>
+                                <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" [routerLink]="['/hfronteditar', habilidadfront.id]" *ngIf="isLogged"></i></li>
+                                <li class="nav-item list-group-item"><i class="fa-solid fa-trash-can fa-xs" *ngIf="isLogged" (click)="deletehfront(habilidadfront.id)"></i></li>
                               </ul>
               </h6><br>
               <div class="progress progress1 mb-4">
@@ -48,17 +48,17 @@
           <div class="col col-12 col-sm-12 col-md-4 col-lg-4">
             <h5>Back-End Skills
                   <!-- Button trigger modal -->
-                  <i class="fa-solid fa-circle-plus fa-xs modificar1" type="button" data-bs-toggle="modal" data-bs-target="#habilidAgregar"></i>
+                  <i class="fa-solid fa-circle-plus fa-xs modificar1" type="button" data-bs-toggle="modal" data-bs-target="#habilidBackAgregar" *ngIf="isLogged"></i>
             </h5><br>
             <hr class="divider2">
 
             <!--Iteración sobre la variable de instancia y presentación de datos mediante iteración-->
-            <div *ngFor="let habilidadback of habilidadesBack">
+            <div *ngFor="let habilidadback of habilidadesBacks">
             <h6 class="text-skills"><i [ngClass]="habilidadback.icono"></i>&nbsp;&nbsp;&nbsp;{{habilidadback.habilidad}}
                   <!-- Button trigger modal -->
                   <ul class="list-group list-group-horizontal modificar madificarItems">
-                    <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" data-bs-toggle="modal" data-bs-target="#habilidEditar"></i></li>
-                    <li class="nav-item list-group-item"><i class="fa-solid fa-trash-can fa-xs"></i></li>
+                    <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" [routerLink]="['/hbackeditar', habilidadback.id]"  *ngIf="isLogged"></i></li>
+                    <li class="nav-item list-group-item"><i class="fa-solid fa-trash-can fa-xs" *ngIf="isLogged" (click)="deletehback(habilidadback.id)"></i></li>
                   </ul>
             </h6><br>
               <div class="progress progress2 mb-4">
@@ -72,17 +72,17 @@
           <div class="col col-12 col-sm-12 col-md-4 col-lg-4">
             <h5>Soft Skills
                     <!-- Button trigger modal -->
-                    <i class="fa-solid fa-circle-plus fa-xs modificar1" type="button" data-bs-toggle="modal" data-bs-target="#habilidAgregar"></i>
+                    <i class="fa-solid fa-circle-plus fa-xs modificar1" type="button" data-bs-toggle="modal" data-bs-target="#habilidSoftAgregar" *ngIf="isLogged"></i>
             </h5><br>
             <hr class="divider2">
 
             <!--Iteración sobre la variable de instancia y presentación de datos mediante iteración-->
-            <div *ngFor="let habilidadsoft of habilidadesSoft">
+            <div *ngFor="let habilidadsoft of habilidadesSofts">
             <h6 class="text-skills"><i [ngClass]="habilidadsoft.icono"></i>&nbsp;&nbsp;&nbsp;{{habilidadsoft.habilidad}}
                     <!-- Button trigger modal -->
                     <ul class="list-group list-group-horizontal modificar madificarItems">
-                      <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" data-bs-toggle="modal" data-bs-target="#habilidEditar"></i></li>
-                      <li class="nav-item list-group-item"><i class="fa-solid fa-trash-can fa-xs"></i></li>
+                      <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" [routerLink]="['/hsofteditar', habilidadsoft.id]" *ngIf="isLogged"></i></li>
+                      <li class="nav-item list-group-item"><i class="fa-solid fa-trash-can fa-xs" *ngIf="isLogged" (click)="deletehsoft(habilidadsoft.id)"></i></li>
                     </ul>
             </h6><br>
               <div class="progress progress3 mb-4">
@@ -97,4 +97,6 @@
   <app-introhabilidades></app-introhabilidades>
   <app-habiliagregar></app-habiliagregar>
   <app-habilieditar></app-habilieditar>
+  <app-hbackagregar></app-hbackagregar>
+  <app-hsoftagregar></app-hsoftagregar>
 

@@ -1,40 +1,156 @@
 <!-- Ventana Modal Educación Agregar-->
 <div class="modal fade" id="educacionAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Agregar Educación</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-         <!-- Formulario Barra de Navegación Ventana Modal -->
-         <form class="ventana-modal">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Título obtenido</label>
-              <input type="email" class="form-control ventanamodal" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">Ingrese título obtenido</div>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Fecha</label>
-                <input type="email" class="form-control ventanamodal" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Año de inicio - Año de culminación</div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Institución</label>
-              <input type="email" class="form-control ventanamodal" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">Ingrese nombre de la Institución</div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
-              <textarea class="form-control ventanamodal" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary btn-modal">¡Guardar!</button>
-        </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Educación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-body">
+
+        <!-- Formulario  Ventana Modal -->
+        <form class="ventana-modal" [formGroup]="form" (ngSubmit)="onEnviar($event)" name="educacionAgregar">
+
+          <div class="mb-3">
+            <label for="educacionImgEdu" class="form-label">URL del logo de la institución</label>
+            <input type="text" class="form-control ventanamodal" id="imgEdu" [class.border-danger]="ImgEduValid"
+              [(ngModel)]="imgEdu" formControlName="imgEdu"
+              [ngClass]="{'is-invalid': ImgEdu?.errors && ImgEdu?.touched}" [ngClass]="{'is-valid': !ImgEdu?.errors}">
+            <div *ngIf="ImgEdu?.errors && ImgEdu?.touched">
+              <p *ngIf="ImgEdu?.hasError('required')" class="error">
+                El logo de la institución es requerido.
+              </p>
+            </div>
+            <div *ngIf="!ImgEdu?.errors && ImgEdu?.touched">
+              <p *ngIf="!ImgEdu?.hasError('required')" class="sinerror">
+                Logo de la institución ingresado.
+              </p>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="educationSizeImg" class="form-label">Tamaño del logo (%)</label>
+            <input type="text" class="form-control ventanamodal" id="sizeImg" aria-describedby="emailHelp"
+              [class.border-danger]="SizeImgValid" [(ngModel)]="sizeImg" formControlName="sizeImg"
+              [ngClass]="{'is-invalid': SizeImg?.errors && SizeImg?.touched}"
+              [ngClass]="{'is-valid': !SizeImg?.errors}">
+            <div *ngIf="SizeImg?.errors && SizeImg?.touched">
+              <p *ngIf="SizeImg?.hasError('required')" class="error">
+                El tamaño del logo es requerido.
+              </p>
+            </div>
+            <div *ngIf="!SizeImg?.errors && SizeImg?.touched">
+              <p *ngIf="!SizeImg?.hasError('required')" class="sinerror">
+                Tamaño del logo ingresado.
+              </p>
+            </div>
+          </div>
+
+
+
+
+          <div class="mb-3">
+            <label for="educationTitulo" class="form-label">Título Obtenido</label>
+            <input type="text" class="form-control ventanamodal" id="titulo" aria-describedby="emailHelp"
+              [class.border-danger]="TituloValid" [(ngModel)]="titulo" formControlName="titulo"
+              [ngClass]="{'is-invalid': Titulo?.errors && Titulo?.touched}" [ngClass]="{'is-valid': !Titulo?.errors}">
+            <div *ngIf="Titulo?.errors && Titulo?.touched">
+              <p *ngIf="Titulo?.hasError('required')" class="error">
+                El titulo es requerido.
+              </p>
+            </div>
+            <div *ngIf="!Titulo?.errors && Titulo?.touched">
+              <p *ngIf="!Titulo?.hasError('required')" class="sinerror">
+                Titulo ingresado.
+              </p>
+            </div>
+          </div>
+
+
+
+
+          <div class="mb-3">
+            <label for="educationInicio" class="form-label">Fecha de inicio</label>
+            <input type="date" class="form-control ventanamodal" id="inicio" [class.border-danger]="InicioValid"
+              [(ngModel)]="inicio" formControlName="inicio"
+              [ngClass]="{'is-invalid': Inicio?.errors && Inicio?.touched}" [ngClass]="{'is-valid': !Inicio?.errors}">
+            <div *ngIf="Inicio?.errors && Inicio?.touched">
+              <p *ngIf="Inicio?.hasError('required')" class="error">
+                La fecha de inicio es requerida.
+              </p>
+            </div>
+            <div *ngIf="!Inicio?.errors && Inicio?.touched">
+              <p *ngIf="!Inicio?.hasError('required')" class="sinerror">
+                Fecha de inicio ingresada.
+              </p>
+            </div>
+          </div>
+
+
+
+
+          <div class="mb-3">
+            <label for="educationFin" class="form-label">Fecha de culminación</label>
+            <input type="date" class="form-control ventanamodal" id="fin" [class.border-danger]="FinValid"
+              [(ngModel)]="fin" formControlName="fin" [ngClass]="{'is-invalid': Fin?.errors && Fin?.touched}"
+              [ngClass]="{'is-valid': !Fin?.errors}">
+            <div *ngIf="Fin?.errors && Fin?.touched">
+              <p *ngIf="Fin?.hasError('required')" class="error">
+                La fecha de culminación es requerida.
+              </p>
+            </div>
+            <div *ngIf="!Fin?.errors && Fin?.touched">
+              <p *ngIf="!Fin?.hasError('required')" class="sinerror">
+                Fecha de culminación ingresada.
+              </p>
+            </div>
+          </div>
+
+
+
+          <div class="mb-3">
+            <label for="educationInstitucion" class="form-label">Institución</label>
+            <input type="text" class="form-control ventanamodal" id="institucion" [(ngModel)]="institucion"
+              formControlName="institucion" [ngClass]="{'is-invalid': Institucion?.errors && Institucion?.touched}"
+              [ngClass]="{'is-valid': !Institucion?.errors}">
+            <div *ngIf="Institucion?.errors && Institucion?.touched">
+              <p *ngIf="Institucion?.hasError('required')" class="error">
+                La institucion es requerida.
+              </p>
+            </div>
+            <div *ngIf="!Institucion?.errors && Institucion?.touched">
+              <p *ngIf="!Institucion?.hasError('required')" class="sinerror">
+                Nombre de la institucion ingresado.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="educationDescripcion" class="form-label">Descripción</label>
+            <textarea class="form-control ventanamodal" id="descripcionEdu" rows="3"
+              [class.border-danger]="DescripcionEduValid" [(ngModel)]="descripcionEdu" formControlName="descripcionEdu"
+              [ngClass]="{'is-invalid': DescripcionEdu?.errors && DescripcionEdu?.touched}"
+              [ngClass]="{'is-valid': !DescripcionEdu?.errors}"></textarea>
+            <div *ngIf="DescripcionEdu?.errors && DescripcionEdu?.touched">
+              <p *ngIf="DescripcionEdu?.hasError('required')" class="error">
+                La descripción es requerida.
+              </p>
+            </div>
+            <div *ngIf="!DescripcionEdu?.errors && DescripcionEdu?.touched">
+              <p *ngIf="!DescripcionEdu?.hasError('required')" class="sinerror">
+                Descripción ingresada.
+              </p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-modal" (click)="limpiar()"><i class="fa-solid fa-broom"></i>&nbsp;Limpiar</button>
+            <button type="submit" class="btn btn-primary btn-modal">¡Guardar!</button>
+          </div>
+
+        </form>
+      </div>
+
     </div>
+  </div>
 </div>
-  

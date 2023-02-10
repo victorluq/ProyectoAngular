@@ -1,0 +1,28 @@
+<header class="fondo navbar fixed-top">
+    <ul style="list-style:none" class="list-group-horizontal list-group">
+        <li><a class="navbar-brand" href="#inicio"><img src="../../assets/Img/LogoAP.png" alt="logo" class="logo"  width="70"/></a></li>
+    </ul>
+  </header>
+  
+  <div class="row">
+  <div class="col-sm-2 col-md-2 col-lg-4 col-xl-4">
+  </div>
+  <div class="container border col-sm-8 col-md-8 col-lg-4 col-xl-4">
+    <h5 class="title text-center">Sobre mis proyectos</h5><br>
+    
+    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+      <input type="hidden" formControlName="id">
+      <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Descripción</label>
+          <textarea class="form-control ventanamodal" rows="6" id="descripcion_proyectos" 
+          [(ngModel)]="pintro.descripcion_proyectos" name="descripcion_proyectos"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary btn-modal" [routerLink]="['']" ><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Salir</button> &nbsp; &nbsp;
+        <button type="submit" class="btn btn-primary btn-modal">¡Guardar!</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-2 col-md-2 col-lg-4 col-xl-4">
+  </div>
+  </div>

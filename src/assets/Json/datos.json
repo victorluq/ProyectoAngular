@@ -161,8 +161,8 @@
     "proyectos": [
         {
             "id": 1,
-            "Titulo": "Portfolio Web - Argentina Programa",
-            "Descripcion": "Proyecto Integrador como trabajo final del Curso de Desarrollo Web Full Stack - Yo Programo, realizado con herramientas como HTML, CSS, Bootstrap y JS(Angular).",
+            "titulo": "Portfolio Web - Argentina Programa",
+            "descripcion": "Proyecto Integrador como trabajo final del Curso de Desarrollo Web Full Stack - Yo Programo, realizado con herramientas como HTML, CSS, Bootstrap y JS(Angular).",
             "imgproyecto": "../../assets/Img/proyecto.png",
             "URLlivedemo": "",
             "URLrepositorio": "",
@@ -170,8 +170,8 @@
         },
         {
             "id": 2,
-            "Titulo": "Task List - Proyecto Personal",
-            "Descripcion": "Aplicación Task List, con funciones que permiten agregar y eliminar tareas, además de aplicar recordatorio. Se realizó con herramientas como HTML, CSS y Angular ",
+            "titulo": "Task List - Proyecto Personal",
+            "descripcion": "Aplicación Task List, con funciones que permiten agregar y eliminar tareas, además de aplicar recordatorio. Se realizó con herramientas como HTML, CSS y Angular ",
             "imgproyecto": "../../assets/Img/Task-List.png",
             "URLlivedemo": "",
             "URLrepositorio": "",

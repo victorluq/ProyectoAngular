@@ -32,6 +32,20 @@ import { ProyectagregarComponent } from './Modals/proyectagregar/proyectagregar.
 import { ProyecteditarComponent } from './Modals/proyecteditar/proyecteditar.component';
 import { ContactomodalComponent } from './Modals/contactomodal/contactomodal.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
+import { ExpeeditComponent } from './expeedit/expeedit.component';
+import { EdueditComponent } from './eduedit/eduedit.component';
+import { IntroeditComponent } from './introedit/introedit.component';
+import { AbouteditComponent } from './aboutedit/aboutedit.component';
+import { HbackagregarComponent } from './Modals/hbackagregar/hbackagregar.component';
+import { HsoftagregarComponent } from './Modals/hsoftagregar/hsoftagregar.component';
+import { HfronteditarComponent } from './hfronteditar/hfronteditar.component';
+import { HbackeditarComponent } from './hbackeditar/hbackeditar.component';
+import { HsofteditarComponent } from './hsofteditar/hsofteditar.component';
+import { HintroeditarComponent } from './hintroeditar/hintroeditar.component';
+import { PintroeditarComponent } from './pintroeditar/pintroeditar.component';
+import { ProyeditarComponent } from './proyeditar/proyeditar.component';
+import { ContactoeditarComponent } from './contactoeditar/contactoeditar.component';
+import { FootereditComponent } from './footeredit/footeredit.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +74,20 @@ import { Navbar2Component } from './navbar2/navbar2.component';
     ProyecteditarComponent,
     ContactomodalComponent,
     Navbar2Component,
+    ExpeeditComponent,
+    EdueditComponent,
+    IntroeditComponent,
+    AbouteditComponent,
+    HbackagregarComponent,
+    HsoftagregarComponent,
+    HfronteditarComponent,
+    HbackeditarComponent,
+    HsofteditarComponent,
+    HintroeditarComponent,
+    PintroeditarComponent,
+    ProyeditarComponent,
+    ContactoeditarComponent,
+    FootereditComponent,
   ],
   imports: [
     BrowserModule,

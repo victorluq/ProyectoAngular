@@ -1,0 +1,39 @@
+/*NavBar*/
+
+
+.fondo{
+    background-color: #070707dc;
+    padding-bottom: 3rem;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    height: 45px;
+    top: 0;
+    padding: 10px 5%;
+}
+
+
+/*Ventana Modal*/
+
+
+.ventanamodal{
+    background-color: #ffffff;
+    color: #070707; 
+    border-color: #F63C12;
+}
+
+.title{
+    color: #030303;
+    font-size: x-large;
+}
+
+.container{
+    margin-top: 5rem;
+    border-radius: 4rem;
+    padding: 2rem;
+    background-color: #ffffffc7;
+    border-color: #F63C12;
+}
+

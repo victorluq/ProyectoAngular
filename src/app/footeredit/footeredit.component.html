@@ -13,14 +13,19 @@
   <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="formulario">
     <input type="hidden" formControlName="id">
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">URL del perfil de Linkedin</label>
+      <label for="url_linkedin" class="form-label">URL del perfil de Linkedin</label>
       <input type="text" class="form-control ventanamodal" id="url_linkedin"
      [(ngModel)]="about.url_linkedin" name="url_linkedin">
     </div>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">URL del perfil de Github</label>
+      <label for="url_github" class="form-label">URL del perfil de Github</label>
       <input type="text" class="form-control ventanamodal" id="url_github"
       [(ngModel)]="about.url_github" name="url_github">
+    </div>
+    <div class="mb-3">
+      <label for="cv" class="form-label">Enlace CV</label>
+      <input type="text" class="form-control ventanamodal" id="cv"
+      [(ngModel)]="about.cv" name="cv">
     </div>
     <div class="modal-footer">
       <button type="submit" class="btn btn-primary btn-modal" [routerLink]="['']" ><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Salir</button> &nbsp; &nbsp;

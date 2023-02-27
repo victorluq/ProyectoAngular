@@ -20,12 +20,11 @@
           </div>
       </div>
 
-      <div *ngFor="let proyecto of proyectos">
+      <div>
       <div class="row">
 
-        <div class="col-sm-0 col-med-2 col-lg-2 col-xl-2">
-        </div>
-        <div class="col-sm-12 col-med-8 col-lg-8 col-xl-8 unproyecto">
+        
+        <div class="col-sm-12 col-med-6 col-lg-6 col-xl-6 unproyecto"  *ngFor="let proyecto of proyectos">
           <div class="card mb-3 bg-dark">
             <img [src]="proyecto.imgproyecto" class="card-img-top" alt="developerVictorUzcategui">
             <div class="card-body">
@@ -41,19 +40,16 @@
               </p>
               <p class="card-text"><small class="text-muted">Elaborado en {{proyecto.fecha | date:"MM-yyyy"}}</small></p>
               <div class="d-grid gap-2">
-                <button class="btn btn-primary card-proyectos" type="button">Live Demo</button>
-                <button class="btn btn-primary card-proyectos" type="button">Repositorio GitHub</button>
+                <a href={{proyecto.urlrepositorio}} target="_blank" class="btn btn-primary" type="button">Repositorio GitHub</a>
               </div>
             </div>          
           </div>
         </div>
-        <div class="col-sm-0 col-med-2 col-lg-2 col-xl-2">
-        </div>
+     
       </div>
         </div>
       </div>
   </section>
-
-  <app-proyectintro></app-proyectintro>
+  
   <app-proyectagregar></app-proyectagregar>
-  <app-proyecteditar></app-proyecteditar>
+ 

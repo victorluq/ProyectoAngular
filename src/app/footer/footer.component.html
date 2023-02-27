@@ -1,8 +1,8 @@
 <section id="footer" class="footer">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row" *ngFor="let aboutme of aboutmes">
         <div class="col col-12 col-sm-12 col-md-3 col-lg-3 text-center justify-content-center">
-          CV (PDF) &nbsp; <a href="../../assets/Archivos/C.V. Victor Uzcátegui..pdf" target="_blank"><i class="fa-solid fa-download fa-lg iconfooter"></i></a>
+          CV (PDF) &nbsp; <a href={{aboutme.cv}} target="_blank"><i class="fa-solid fa-download fa-lg iconfooter"></i></a>
         </div>
         <div class="col col-12 col-sm-12 col-md-6 col-lg-6">
           <h6><p class="text-pequeño text-center"> Victor Luis Uzcátegui Luque - 
@@ -11,9 +11,9 @@
             Copyright © Victor Uzcátegui 2022. All Rights Reserved
             </p></h6>
         </div>
-        <div class="col col-12 col-sm-12 col-md-3 col-lg-3 text-center justify-content-center" *ngFor="let aboutme of aboutmes">
+        <div class="col col-12 col-sm-12 col-md-3 col-lg-3 text-center justify-content-center">
           
-          <ul class="list-group list-group-horizontal listaderedes redesfooter">
+          <ul class="list-group list-group-horizontal listaderedes redesfooter justify-content-center">
             <li class="nav-item list-group-item"><i class="fa-solid fa-pen-to-square fa-xs" type="button" [routerLink]="['/footeredit', aboutme.id]" *ngIf="isLogged"></i></li>
             <li class="nav-item list-group-item"><a href={{aboutme.url_linkedin}} target="_blank"><i class="fa-brands fa-linkedin-in fa-lg redes"></i></a></li>
             <li class="nav-item list-group-item"><a href={{aboutme.url_github}} target="_blank"><i class="fa-brands fa-github fa-lg redes"></i></a></li>

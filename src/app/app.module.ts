@@ -8,7 +8,6 @@ import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './Modals/login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SobreMiComponent } from './sobremi/sobremi.component';
@@ -18,19 +17,10 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from './error/error.component';
 import { IndexComponent } from './index/index.component';
-import { IniciomodalComponent } from './Modals/iniciomodal/iniciomodal.component';
-import { PerfilmodalComponent } from './Modals/perfilmodal/perfilmodal.component';
 import { EduagregarComponent } from './Modals/eduagregar/eduagregar.component';
-import { EdueditarComponent } from './Modals/edueditar/edueditar.component';
 import { ExpeagregarComponent } from './Modals/expeagregar/expeagregar.component';
-import { ExpeeditarComponent } from './Modals/expeeditar/expeeditar.component';
-import { IntrohabilidadesComponent } from './Modals/introhabilidades/introhabilidades.component';
 import { HabiliagregarComponent } from './Modals/habiliagregar/habiliagregar.component';
-import { HabilieditarComponent } from './Modals/habilieditar/habilieditar.component';
-import { ProyectintroComponent } from './Modals/proyectintro/proyectintro.component';
 import { ProyectagregarComponent } from './Modals/proyectagregar/proyectagregar.component';
-import { ProyecteditarComponent } from './Modals/proyecteditar/proyecteditar.component';
-import { ContactomodalComponent } from './Modals/contactomodal/contactomodal.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
 import { ExpeeditComponent } from './expeedit/expeedit.component';
 import { EdueditComponent } from './eduedit/eduedit.component';
@@ -50,7 +40,6 @@ import { FootereditComponent } from './footeredit/footeredit.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     LoginComponent,
     InicioComponent,
     SobreMiComponent,
@@ -60,19 +49,10 @@ import { FootereditComponent } from './footeredit/footeredit.component';
     FooterComponent,
     ErrorComponent,
     IndexComponent,
-    IniciomodalComponent,
-    PerfilmodalComponent,
     EduagregarComponent,
-    EdueditarComponent,
     ExpeagregarComponent,
-    ExpeeditarComponent,
-    IntrohabilidadesComponent,
     HabiliagregarComponent,
-    HabilieditarComponent,
-    ProyectintroComponent,
     ProyectagregarComponent,
-    ProyecteditarComponent,
-    ContactomodalComponent,
     Navbar2Component,
     ExpeeditComponent,
     EdueditComponent,
@@ -95,7 +75,7 @@ import { FootereditComponent } from './footeredit/footeredit.component';
     HttpClientModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

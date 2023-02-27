@@ -17,6 +17,21 @@
           <textarea class="form-control ventanamodal" rows="6" id="descripcion_contacto" 
           [(ngModel)]="cont.descripcion_contacto" name="descripcion_contacto"></textarea>
       </div>
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Número de teléfono</label>
+        <input type="text" class="form-control ventanamodal" id="telefono"
+        [(ngModel)]="cont.telefono" name="telefono">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Dirección Email</label>
+        <input type="text" class="form-control ventanamodal" id="email"
+        [(ngModel)]="cont.email" name="email">
+      </div>
+      <div class="mb-3">
+        <label for="ubicacion" class="form-label">Ubicación de Residencia</label>
+        <input type="text" class="form-control ventanamodal" id="ubicacion"
+        [(ngModel)]="cont.ubicacion" name="ubicacion">
+      </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary btn-modal" [routerLink]="['']" ><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Salir</button> &nbsp; &nbsp;
         <button type="submit" class="btn btn-primary btn-modal">¡Guardar!</button>

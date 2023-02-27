@@ -19,18 +19,13 @@
     </div>
     <div class="mb-3">
       <label for="descripcionproyecto" class="form-label">Descripción del Proyecto</label>
-      <input type="text" class="form-control ventanamodal" id="descripcion" 
-      [(ngModel)]="proy.descripcion" name="descripcion">
+      <textarea class="form-control ventanamodal" id="descripcion" rows="3"
+      [(ngModel)]="proy.descripcion" name="descripcion"></textarea>
     </div>
     <div class="mb-3">
       <label for="imgproyecto" class="form-label">Url de la imágen del proyecto</label>
       <input type="text" class="form-control ventanamodal" id="imgproyecto"
       [(ngModel)]="proy.imgproyecto" name="imgproyecto">
-    </div>
-    <div class="mb-3">
-        <label for="urllivedemo" class="form-label">Url live demo</label>
-        <input type="text" class="form-control ventanamodal" id="urllivedemo"
-        [(ngModel)]="proy.urllivedemo" name="urllivedemo">
     </div>
     <div class="mb-3">
         <label for="urlrepositorio" class="form-label">Url del repositorio</label>

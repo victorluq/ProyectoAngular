@@ -1,13 +1,15 @@
 section.contacto{
-    background-image: url(../../assets/Img/desarrolloweboscuro.webp);
+    background-image: url(https://i.ibb.co/wWmq04r/desarrolloweboscuro.webp);
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
     background-size: cover;
 }
 
-.form-control{
-    border-color: #ffffff;
-    background-color: #ffffff31;
-    color: #070707;
- }
+.iconoscont{
+    color: #F63C12;
+}
+
+#trucazo{
+    opacity: 0;
+}

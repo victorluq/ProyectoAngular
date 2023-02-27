@@ -1,3 +1,7 @@
+![](https://i.ibb.co/tzs4Gt6/loguito.png)
+
+
+
 # ProyectoAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.

@@ -1,5 +1,6 @@
 ![](https://i.ibb.co/2twmbZ0/img-Readme.png)
 
+
 # Introducción del proyecto: 🤓
 Se trata de un proyecto Portfolio que forma parte de las prácticas finales para obtener certificación como Full Stack Developer por Argentina Programa - Ministerio de Economía. 👨🏻‍💻
 

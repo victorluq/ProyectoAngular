@@ -15,12 +15,12 @@ Para correr el proyecto, se debe hacer "*ng serve*" en el terminal del Visual St
 
 ## Recursos utilizados: 🔧
 
-https://es.stackoverflow.com/ 👉 para la búsqueda de soluciones a errores presentados en la edición de códigos.
-https://codepen.io/  👉 para la búsqueda de aspectos y componentes que pudieran servir al mejoramiento visual del proyecto.
-https://fontawesome.com/   👉 para la implementación de íconos.
-https://cssgradient.io/  👉 para la implementación de gradientes, tanto para fondos, como para degradados de imágenes.
-https://colorpicker.me/#ebdebd 👉 para la búsqueda de colores según el tipo de formato de color
-https://andrew.hedges.name/experiments/aspect_ratio/  👉 para la unificación de medidas de imágenes.
+https://es.stackoverflow.com/ 👉 para la búsqueda de soluciones a errores presentados en la edición de códigos.<br>
+https://codepen.io/  👉 para la búsqueda de aspectos y componentes que pudieran servir al mejoramiento visual del proyecto.<br>
+https://fontawesome.com/   👉 para la implementación de íconos.<br>
+https://cssgradient.io/  👉 para la implementación de gradientes, tanto para fondos, como para degradados de imágenes.<br>
+https://colorpicker.me/#ebdebd 👉 para la búsqueda de colores según el tipo de formato de color. <br>
+https://andrew.hedges.name/experiments/aspect_ratio/  👉 para la unificación de medidas de imágenes.<br>
 https://jsonlint.com/  👉 para realizar archivo Json y visualizar su aspecto final.
 
 

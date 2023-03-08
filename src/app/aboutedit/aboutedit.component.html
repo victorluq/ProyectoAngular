@@ -1,13 +1,14 @@
 <header class="fondo navbar fixed-top">
     <ul style="list-style:none" class="list-group-horizontal list-group">
         <li><a class="navbar-brand" href="#inicio"><img src="../../assets/Img/LogoAP.png" alt="logo" class="logo"  width="70"/></a></li>
+        <li><a class="navbar-brand" href="#inicio"></a><button type="submit" class="btn btn-primary btn-modal btninicio" [routerLink]="['']" >Inicio&nbsp;<i class="fa-solid fa-house"></i>&nbsp;</button></li>
     </ul>
 </header>
 
 <div class="row">
-<div class="col-sm-2 col-md-2 col-lg-4 col-xl-4">
+<div class="col-sm-3 col-md-3 col-lg-4 col-xl-4">
 </div>
-<div class="container border col-sm-8 col-md-8 col-lg-4 col-xl-4">
+<div class="container border col-sm-6 col-md-6 col-lg-4 col-xl-4">
   <h5 class="title text-center">Editar datos personales</h5><br>
   
   <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="formulario">
@@ -48,6 +49,6 @@
     </div>
   </form>
 </div>
-<div class="col-sm-2 col-md-2 col-lg-4 col-xl-4">
+<div class="col-sm-3 col-md-3 col-lg-4 col-xl-4">
 </div>
 </div>

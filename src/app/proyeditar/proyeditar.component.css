@@ -1,3 +1,6 @@
+/*NavBar*/
+
+
 .fondo{
     background-color: #070707dc;
     padding-bottom: 3rem;
@@ -12,7 +15,7 @@ header {
 }
 
 
-
+/*Ventana Modal*/
 
 
 .ventanamodal{
@@ -28,8 +31,14 @@ header {
 
 .container{
     margin-top: 5rem;
-    border-radius: 4rem;
+    border-radius: 0.5rem;
     padding: 2rem;
-    background-color: #ffffffc7;
+    background-color: #ffffff62;
     border-color: #F63C12;
+}
+
+.btninicio{
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    margin-top: 0.3rem;
 }

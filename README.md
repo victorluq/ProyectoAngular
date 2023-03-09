@@ -27,4 +27,9 @@ https://jsonlint.com/  👉 para realizar archivo Json y visualizar su aspecto f
 
 ## Imágenes:  🌄
 
-Para facilitar la manipulación de imágenes y no perderlas en el proceso de clonado de código, las imágenes están guardadas en https://es.imgbb.com, por lo que la implementación de imágenes en el código HTML se realiza por dirección URL. De igual forma todas las imágenes están cargadas en la carpeta imágenes, en ASSETS.
+Para facilitar la manipulación de imágenes y no perderlas en el proceso de clonado de código, las imágenes están guardadas en https://es.imgbb.com, por lo que la implementación de imágenes en el código HTML se realiza por dirección URL. De igual forma todas las imágenes están cargadas en la carpeta "Img" ➡️ arc/assets/Img.
+
+## Archivos:  📁
+
+El archivo PDF del CV, se encuentra guardado en https://www.dropbox.com. En tal sentido, el ingreso de la variable CV se hace medianto dirección URL. De igual forma el archivo PDF se encuentra cargado en la carpeta "Archivos" ➡️ src/assets/Archivos.
+

@@ -8,7 +8,7 @@ import { HabilidadesSoft } from '../Entity/habilidades-soft';
 })
 export class HabilidadesSoftService {
 
-  url = 'http://localhost:8080/habilidadesSoft/'
+  url = 'https://backendrender.onrender.com/habilidadesSoft/'
 
   constructor(private httpClient: HttpClient) { }
 

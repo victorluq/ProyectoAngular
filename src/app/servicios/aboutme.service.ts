@@ -8,7 +8,8 @@ import { Aboutme } from '../Entity/aboutme';
 })
 export class AboutmeService {
 
-  url = 'http://localhost:8080/aboutme/'
+  //url = 'http://localhost:8080/aboutme/'
+  url = 'https://backendrender.onrender.com/aboutme/'
 
   constructor(private httpClient:HttpClient) { }
 

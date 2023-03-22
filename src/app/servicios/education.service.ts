@@ -8,7 +8,7 @@ import { Education } from '../Entity/education';
 })
 export class EducationService {
 
-  url = 'http://localhost:8080/education/'
+  url = 'https://backendrender.onrender.com/education/'
 
   constructor(private httpClient:HttpClient) { }
 

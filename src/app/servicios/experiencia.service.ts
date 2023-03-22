@@ -8,7 +8,7 @@ import { Experiencia } from '../Entity/experiencia';
 })
 export class ExperienciaService {
 
-    url = 'http://localhost:8080/experiencia/'
+    url = 'https://backendrender.onrender.com/experiencia/'
 
   constructor(private httpClient:HttpClient) { }
 

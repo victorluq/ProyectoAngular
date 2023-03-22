@@ -8,7 +8,7 @@ import { HabilidadesFront } from '../Entity/habilidades-front';
 })
 export class HabilidadesFrontService {
 
-  url = 'http://localhost:8080/habilidadesFront/'
+  url = 'https://backendrender.onrender.com/habilidadesFront/'
 
 
   constructor(private httpClient: HttpClient) { }

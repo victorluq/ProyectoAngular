@@ -9,7 +9,7 @@ import { Aboutme } from '../Entity/aboutme';
 export class AboutmeService {
 
   //url = 'http://localhost:8080/aboutme/'
-  url = 'original-karena-victorluq.koyeb.app/aboutme/'
+  url = 'https://original-karena-victorluq.koyeb.app/aboutme/'
 
   constructor(private httpClient:HttpClient) { }
 

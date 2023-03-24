@@ -9,7 +9,7 @@ import { HabilidadesBack } from '../Entity/habilidades-back';
 export class HabilidadesBackService {
 
   //url = 'http://localhost:8080/habilidadesBack/'
-  url = 'original-karena-victorluq.koyeb.app/habilidadesBack/'
+  url = 'https://original-karena-victorluq.koyeb.app/habilidadesBack/'
 
   constructor(private httpClient: HttpClient) { }
 

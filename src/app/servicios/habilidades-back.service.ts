@@ -8,7 +8,8 @@ import { HabilidadesBack } from '../Entity/habilidades-back';
 })
 export class HabilidadesBackService {
 
-  url = 'https://backendrender.onrender.com/habilidadesBack/'
+  //url = 'http://localhost:8080/habilidadesBack/'
+  url = 'https://original-karena-victorluq.koyeb.app/habilidadesBack/'
 
   constructor(private httpClient: HttpClient) { }
 

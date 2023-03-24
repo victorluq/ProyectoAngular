@@ -10,7 +10,8 @@ import { JwtDto } from '../Entity/jwt-dto';
 })
 export class AuthService {
 
-  authURL = 'https://backendrender.onrender.com/auth/';
+  //authURL = 'http://localhost:8080/auth/';
+  authURL = 'https://original-karena-victorluq.koyeb.app/auth/'
 
   constructor(private httpClient: HttpClient) { }
 

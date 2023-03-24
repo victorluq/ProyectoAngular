@@ -8,7 +8,8 @@ import { HabilidadesSoft } from '../Entity/habilidades-soft';
 })
 export class HabilidadesSoftService {
 
-  url = 'https://backendrender.onrender.com/habilidadesSoft/'
+  //url = 'http://localhost:8080/habilidadesSoft/'
+  url = 'https://original-karena-victorluq.koyeb.app/habilidadesSoft/'
 
   constructor(private httpClient: HttpClient) { }
 

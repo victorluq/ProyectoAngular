@@ -11,7 +11,7 @@ import { JwtDto } from '../Entity/jwt-dto';
 export class AuthService {
 
   //authURL = 'http://localhost:8080/auth/';
-  authURL = 'https://original-karena-victorluq.koyeb.app/auth'
+  authURL = 'https://original-karena-victorluq.koyeb.app/auth/'
 
   constructor(private httpClient: HttpClient) { }
 

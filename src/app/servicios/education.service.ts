@@ -9,7 +9,7 @@ import { Education } from '../Entity/education';
 export class EducationService {
 
   //url = 'http://localhost:8080/education/'
-  url = 'https://original-karena-victorluq.koyeb.app/education/'
+  url = 'original-karena-victorluq.koyeb.app/education/'
 
 
   constructor(private httpClient:HttpClient) { }

@@ -9,7 +9,7 @@ import { Proyecto } from '../Entity/proyecto';
 export class ProyectoService {
 
   //url = 'http://localhost:8080/proyectos/'
-  url = 'https://original-karena-victorluq.koyeb.app/proyectos/'
+  url = 'original-karena-victorluq.koyeb.app/proyectos/'
 
   constructor(private httpClient: HttpClient) { }
 

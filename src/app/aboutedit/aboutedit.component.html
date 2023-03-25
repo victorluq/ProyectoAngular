@@ -11,7 +11,7 @@
 <div class="container border col-sm-6 col-md-6 col-lg-4 col-xl-4">
   <h5 class="title text-center">Editar datos personales</h5><br>
   
-  <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="formulario">
+  <form [formGroup]="form" (ngSubmit)="onEnviar($event)" novalidate #f="ngForm" class="formulario">
     <input type="hidden" formControlName="id">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Nombres</label>

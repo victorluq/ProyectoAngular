@@ -35,9 +35,10 @@ export class AbouteditComponent implements OnInit {
                 const id = this.activatedRouter.snapshot.params['id'];
                 this.aboutServ.editarAboutme(this.about).subscribe(
                   data => {
-                    alert("Persona modificada.");
-                   this.router.navigate(['']);
-                 }
+                    this.router.navigate(['']);
+                  }, err => {
+                    this.router.navigate(['']);
+                  }
                 )
               }
 

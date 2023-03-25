@@ -32,24 +32,15 @@ export class AbouteditComponent implements OnInit {
               }
 
               onUpdate(): void {
-                const id = this.activatedRouter.snapshot.params['id'];
-                this.aboutServ.editarAboutme(this.about).subscribe(
+                
+                this.aboutServ.editarAboutme(this.form.value).subscribe(
                   data => {
-                    this.router.navigate(['']);
-                  }, err => {
-                    this.router.navigate(['']);
-                  }
+                    alert("Experiencia modificada.");
+                   this.router.navigate(['']);
+                 }
                 )
               }
 
-              onEnviar(event:Event){
-                event.preventDefault;
-                if (this.form.valid){
-                  this.onUpdate();
-                }else{
-                  alert("falló en la carga, intente nuevamente");
-                  this.form.markAllAsTouched();
-                }
-              }
+              
 
 }

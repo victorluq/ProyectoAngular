@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Aboutme } from '../Entity/aboutme';
 import { AboutmeService } from '../servicios/aboutme.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -13,7 +12,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AbouteditComponent implements OnInit {
 
   about : Aboutme = null;
-  form: FormGroup;
 
   constructor(private aboutServ:AboutmeService,
               private activatedRouter: ActivatedRoute,
@@ -35,12 +33,11 @@ export class AbouteditComponent implements OnInit {
                 const id = this.activatedRouter.snapshot.params['id'];
                 this.aboutServ.editarAboutme(this.about).subscribe(
                   data => {
-                    alert("Experiencia modificada.");
-                   this.router.navigate(['']);
-                 }
+                    this.router.navigate(['']);
+                  }, err => {
+                    this.router.navigate(['']);
+                  }
                 )
               }
-
-              
 
 }
